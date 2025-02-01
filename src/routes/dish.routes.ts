@@ -1,6 +1,11 @@
 import { Router } from 'express';
 import { jwtMiddleware, jwtMiddlewareOwner } from '../middleware/jwtMiddleware';
-import { createDish, getDishById, getDishesByRestaurantId, updateDish } from '../controllers/dish.controller';
+import { 
+    createDish,
+    getDishById,
+    getDishesByRestaurantId,
+    updateDish
+} from '../controllers/dish.controller';
 
 const router = Router();
 
