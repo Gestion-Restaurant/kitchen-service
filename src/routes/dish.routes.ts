@@ -2,6 +2,7 @@ import { Router } from 'express';
 import { jwtMiddleware, jwtMiddlewareOwner } from '../middleware/jwtMiddleware';
 import { 
     createDish,
+    deleteDish,
     getDishById,
     getDishesByRestaurantId,
     updateDish
@@ -20,18 +21,18 @@ router.get('/:dishId', (req, res) => {
 });
 
 // Create dish
-router.post('/', jwtMiddlewareOwner, (req, res) => {
+router.post('/', (req, res) => {
     createDish(req, res);
 });
 
 // Update Product
-router.put('/:dishId', jwtMiddlewareOwner, (req, res) => {
+router.patch('/:dishId', (req, res) => {
     updateDish(req, res);
 });
 
 // Delete Product
-router.delete('/:dishId', jwtMiddlewareOwner, (req, res) => {
-    updateDish(req, res);
+router.delete('/:dishId', (req, res) => {
+    deleteDish(req, res);
 });
 
 export default router;
